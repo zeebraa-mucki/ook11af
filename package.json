@@ -1,0 +1,47 @@
+{
+  "name": "gdrive-index",
+  "version": "1.0.0",
+  "description": "A index server for google drive",
+  "main": "index.js",
+  "scripts": {
+    "prebuild": "npm install && cd web && npm install",
+    "build": "cd web && npm run build",
+    "dev": "concurrently --kill-others \"PORT=3001 nodemon index.js\" \"cd web && npm run start\"",
+    "start": "NODE_ENV=production node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patheticGeek/gdrive-index.git"
+  },
+  "keywords": [
+    "gdrive",
+    "google",
+    "drive",
+    "index",
+    "server",
+    "heroku"
+  ],
+  "author": "pathetic_geek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/patheticGeek/gdrive-index/issues"
+  },
+  "homepage": "https://github.com/patheticGeek/gdrive-index#readme",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "googleapis": "^52.1.0",
+    "nodemon": "^2.0.4"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      ".next",
+      "node_modules",
+      "web"
+    ]
+  }
+}
